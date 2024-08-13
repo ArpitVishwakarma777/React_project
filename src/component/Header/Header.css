@@ -19,6 +19,7 @@
   .nav-link {
     font-size: x-large;
     margin: 1rem;
+    font-weight: 400;
     border-bottom: 4px solid rgb(236,236,234)
   }
   .nav-link:hover{
@@ -28,6 +29,7 @@
     .nav-link {
       font-size: x-large;
       margin: 0.4rem;
+
     }
   }
   .contain {
@@ -36,7 +38,7 @@
 
   .btn_sign{  
     height: 2.1rem;
-    
+
     font-weight: 500;
     border-radius: 1.2rem;}
   
