@@ -1,0 +1,79 @@
+.mainBox{
+    background-image: url("/src/assets/image/bg-image.jpeg");
+}
+    .blurBox{
+    height: 50vh;
+    opacity: 0.7; 
+    }
+    
+    .textBox{
+      z-index: 1; 
+      
+    }
+    .textBox button{
+      z-index: 1;
+    }
+    .text{
+      z-index: 1;
+      /* opacity: 3; */
+      color: white;
+    }
+    .order_now{
+      height: 50px;
+      
+    }
+    * {
+      font-family: cursive, sans-serif;
+    }
+    .mainBox {
+      background-image: url("/Image/bg-image.jpeg");
+    }
+    .blurBox {
+      height: 50vh;
+      opacity: 0.7;
+    }
+    
+    .textBox {
+      z-index: 1;
+    }
+    .textBox button {
+      z-index: 1;
+    }
+    .text {
+      z-index: 1;
+      
+      color: white;
+    }
+    .order_now {
+      height: 50px;
+    }
+    .box-shadow {
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.9);
+    }
+    @media (min-width: 768px) {
+      .card-text3::after {
+        content: "A plate with 4-5 soft rotis, extra crispy gram flour noodles curry,and  salad";
+      }
+     
+    }
+    @media (max-width: 768px) {
+      .card-text3::after {
+        content: "A plate with 4-5 soft rotis with crispy gram flour noodles curry and salad.";
+      }
+    }
+    
+    /*For scroll bar*/
+    /* Base styles for the container and columns */
+    .container {
+      overflow-x: auto;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .container::-webkit-scrollbar{
+      width:0;
+    }
+    
