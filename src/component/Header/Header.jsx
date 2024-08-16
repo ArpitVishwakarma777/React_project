@@ -2,11 +2,11 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import './Header.css'
 import webLogo from '../../assets/logo/web-logo 1.png';
-
+import 'bootstrap/dist/js/bootstrap.bundle'
 export default function Header() {
     return (
       <div>
-  <nav className="navbar navbar-expand-lg navbar-light bg-white  ">
+  <nav className="navbar mb-0 navbar-expand-lg navbar-light bg-white  ">
     <div className="container-fluid box ">
       <img className="img" src={webLogo} alt />
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,8 @@ export default function Header() {
           <div className="contain">
             <button style={{border: 'none'}}> <span className=" mt-1 material-symbols-outlined">
                 shopping_bag
-              </span></button>
+              </span>
+              <span>1</span></button>
             <br />
           </div>
           <div className="contain">
