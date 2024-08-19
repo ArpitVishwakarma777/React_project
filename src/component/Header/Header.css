@@ -14,7 +14,7 @@
     background-color: rgb(236, 236, 234);
   }
   .nav {
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
   }
   .nav-link {
     font-size: x-large;
@@ -33,7 +33,7 @@
     }
   }
   .contain {
-  margin:30px;
+
   background: rgb(236, 236, 234);
   }
 
@@ -42,4 +42,11 @@
 
     font-weight: 500;
     border-radius: 1.2rem;}
-  
+  @media (max-width:992px) {
+    .navbar-collapse {
+      align-items:start;
+      flex-direction: column
+    }
+   
+  }
+    
