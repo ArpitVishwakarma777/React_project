@@ -9,24 +9,24 @@ export default function Footer() {
       <span>Get connected with us on social networks:</span>
     </div>
     <div>
-      <a href className="rounded-circle btn btn-outline btn-floating m-1">
+      <Link href className="rounded-circle btn btn_footer btn-outline btn-floating m-1">
         <i className="fab fa-facebook-f" />
-      </a>
-      <a href className=" btn rounded-circle btn-outline btn-floating m-1">
+      </Link>
+      <Link href className=" btn btn_footer rounded-circle btn-outline btn-floating m-1">
         <i className="fab fa-twitter" />
-      </a>
-      <a href className="btn rounded-circle btn-outline btn-floating m-1">
+      </Link>
+      <Link href className="btn btn_footer rounded-circle btn-outline btn-floating m-1">
         <i className="fab fa-google" />
-      </a>
-      <a href className="btn rounded-circle btn-outline btn-floating m-1">
+      </Link>
+      <Link href className="btn btn_footer rounded-circle btn-outline btn-floating m-1">
         <i className="fab fa-instagram" />
-      </a>
-      <a href className="btn rounded-circle btn-outline btn-floating m-1">
+      </Link>
+      <Link href className="btn btn_footer rounded-circle btn-outline btn-floating m-1">
         <i className="fab fa-linkedin" />
-      </a>
-      <a href className="btn rounded-circle btn-outline btn-floating m-1">
+      </Link>
+      <Link href className="btn btn_footer rounded-circle btn-outline btn-floating m-1">
         <i className="fab fa-github" />
-      </a>
+      </Link>
     </div>
   </section>
   <section className>
@@ -45,47 +45,47 @@ export default function Footer() {
         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <h5 className=" main-teaxt text-uppercase fw-bold mb-4">Products</h5>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
             Home
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
            Tiffin
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
               About
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
             Conatact Us
-            </a>
+            </Link>
           </p>
         </div>
         <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <h5 className="text-uppercase fw-bold mb-4">Useful links</h5>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
               Pricing
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
               Settings
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
               Orders
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="#!" className="text-reset">
+            <Link href="#!" className="text-reset">
               Help
-            </a>
+            </Link>
           </p>
         </div>
         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
