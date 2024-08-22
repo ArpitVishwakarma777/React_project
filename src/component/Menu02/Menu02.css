@@ -1,0 +1,31 @@
+.shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.myFlex {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+.DecMergin {
+  margin-right: -2em;
+}
+.myFont {
+  font-weight: 600;
+  font-size: larger;
+}
+.dropshadow {
+  display: flex;
+  filter: drop-shadow(10px 15px 10px #b39898);
+  width: 70%;
+  height: 50%;
+  justify-content: center;
+  margin-left: 35px;
+  margin-top: 20px;
+}
+.imgHW {
+  height: 205px;
+  width: 100%;
+  padding-top: 20px;
+}
