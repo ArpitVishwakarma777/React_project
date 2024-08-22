@@ -17,34 +17,47 @@ import Tarun from "../../assets/image/carousel3.png";
 import Helper_Template from "../../assets/image/Helper_Template.jpg";
 
 import "bootstrap/dist/js/bootstrap.bundle";
-
+const carddata = [
+  {
+    src: Dalbati,
+    title: "Dal-Bati",
+    textClass: "card_text1",
+    text: " A plate with 5 ghee-soaked Batis, served with a bowl of hot Dal and fresh salad.",
+  },
+  {
+    src: Paratha,
+    title: "Dahi-Paratha",
+    textClass: "card_text2",
+    text: "(Panjabi Tad)A serving of 5 soft parathas with fresh yogurt and flavorful spices.",
+  },
+  {
+    src: Sev,
+    title: "sev-veg & more",
+    textClass: "card_text3",
+    text: "A plate with 4-5 soft rotis, extra crispy gram flour noodles curry,and salad.",
+  },
+  {
+    src: Poori,
+    title: "Poori special",
+    textClass: "card_text4",
+    text: " Enjoy 5 fluffy puris paired with a flavorful potato curry and a side of fresh salad.",
+  },
+  {
+    src: FullThal,
+    title: "Full-thali",
+    textClass: "card_text5",
+    text: " India flavors in one plate Roti, Sabji, Dahi, Salad, and more complete thali.",
+  },
+  {
+    src: MakkaChapati,
+    title: "Chapati special",
+    textClass: "card_text3",
+    text: "Taste tradition with 4 Makki di Roti and full plat Sarson da Saag- test of panjabi",
+  },
+];
 export default function Home() {
   return (
     <div>
-      {/* <div className="mainBox">
-        <div className="blurBox bg-secondary text-white container-fluid d-flex justify-content-center align-items-center position-absolute">
-          <div className="textBox" />
-        </div>
-        <div
-          className="position-relative d-flex justify-content-center align-items-center "
-          style={{ height: "50vh" }}
-        >
-          <div className="mx-5">
-            <h1 className="text mb-4">
-              "Bringing the taste of home, one tiffin at a time."
-            </h1>
-            <div className="d-flex justify-content-xs-center">
-              <button
-                type="button"
-                className="btn rounded btn-danger order_now   my-4 mx-5 w-sm-25 rounded "
-              >
-                Order Now!
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      */}
       {/* For Carousels */}
       <div id="carouselExampleCaptions" className="carousel slide">
         <div className="carousel-indicators">
@@ -125,103 +138,25 @@ export default function Home() {
         <h1 className="One-day-special">One day special</h1>
       </div>
       {/* For Cards */}
+
       <div className="container">
         <div className="row">
-          <div className="col1 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Dalbati} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Dal-Bati</h5>
-                <p className="card-text1">
-                  A plate with 5 ghee-soaked Batis, served with a bowl of hot
-                  Dal and fresh salad.
-                </p>
-                <Link href="#" className="btn  btn-primary">
-                  Add Card
-                </Link>
+          {carddata.map((card) => {
+            return (
+              <div className="col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
+                <div className="card box-shadow">
+                  <img src={card.src} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{card.title}</h5>
+                    <p className={card.textClass}>{card.text}</p>
+                    <Link href="#" className="btn  btn-primary">
+                      Add Card
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          {/* For second card */}
-          <div className="col2 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Paratha} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Dahi-Paratha</h5>
-                <p className="card-text2">
-                  (Panjabi Tad)A serving of 5 soft parathas with fresh yogurt
-                  and flavorful spices.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For third card */}
-          <div className="col3 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Sev} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text3">
-                  {/* A plate with 4-5 soft rotis, extra crispy gram flour noodles
-        curry,and  salad.*/}
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For fourth card */}
-          <div className="col4 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow  ">
-              <img src={Poori} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Poori special</h5>
-                <p className="card-text4">
-                  Enjoy 5 fluffy puris paired with a flavorful potato curry and
-                  a side of fresh salad.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For Five,th card */}
-          <div className="col5 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={FullThal} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text5">
-                  India flavors in one plate Roti, Sabji, Dahi, Salad, and more
-                  complete thali.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For Sixth card */}
-          <div className="col6 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={MakkaChapati} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text6">
-                  Taste tradition with 4 Makki di Roti and full plat Sarson da
-                  Saag- test of panjabi
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
       <div className="container mt-lg-2">
@@ -435,14 +370,13 @@ export default function Home() {
                 >
                   <i className="fa fa-chevron-right" />
                 </Link>
+                5
               </div>
             </div>
           </div>
         </div>
       </div>
       <br />
-
     </div>
-
   );
 }
