@@ -4,9 +4,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./component/Home/Home.jsx";
 import About from "./component/About/About.jsx";
-import Layout from "./Layout.jsx";
+import App from "./App.jsx";
 
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -19,17 +24,14 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 // ]);
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path ="/" element={<Layout/>}
-    >
-      <Route path="" element={<Home/>}/>
-      <Route path="About" element={<About/>}/>
-
+    <Route path="/" element={<App />}>
+      {/* <Route path="" element={<Home />} /> */}
+      <Route path="About" element={<About />} />
     </Route>
   )
-)
+);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
 );
- 
