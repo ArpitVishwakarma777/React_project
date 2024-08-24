@@ -55,11 +55,30 @@ const carddata = [
     text: "Taste tradition with 4 Makki di Roti and full plat Sarson da Saag- test of panjabi",
   },
 ];
+const testimonialsData = [
+  [
+    { src: Anikesh, name: "Anikesh", position: "Owner" },
+    {
+      src: Aman,
+      name: "Aman",
+      position: "Owner",
+    },
+  ],
+  [
+    { src: Arpit, name: "Arpit", position: "Owner" },
+    {
+      src: Tarun,
+      name: "Tarun",
+      position: "Owner",
+    },
+  ],
+];
 export default function Home() {
   return (
     <div>
       {/* For Carousels */}
-      <div id="carouselExampleCaptions" className="carousel slide">
+      <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel"
+      data-bs-inteval="1000">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -95,7 +114,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" carousel-item2 carousel-item">
-            <img src={Carousel2} className="d-block w-100" alt="..." />
+            <img src={Carousel2} className="d-block  h-50 w-100" alt="..." />
             <div className="caption2 d-none d-md-block">
               <p>"Bringing the taste of home </p>
               <p> one tiffin at a time."</p>
@@ -105,7 +124,7 @@ export default function Home() {
             </div>
           </div>
           <div className="carousel-item carousel-item3 ">
-            <img src={Carousel3} className="d-block w-100" alt="..." />
+            <img src={Carousel3} className="d-block  h-50 w-100" alt="..." />
             <div className="caption3 d-none d-md-block">
               <p>"Bringing the taste of home </p>
               <p> one tiffin at a time."</p>
@@ -137,8 +156,8 @@ export default function Home() {
       <div className="d-flex justify-content-center my-sm-4">
         <h1 className="One-day-special">One day special</h1>
       </div>
-      {/* For Cards */}
 
+      {/* For Cards */}
       <div className="container">
         <div className="row">
           {carddata.map((card) => {
@@ -172,6 +191,8 @@ export default function Home() {
               id="myCarousel"
               className="carousel slide"
               data-ride="carousel"
+              data-interval="5000"
+
             >
               <h2>
                 Collbrate<b></b> with Owner
@@ -187,190 +208,62 @@ export default function Home() {
               </ol>
               {/* Wrapper for carousel items */}
               <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam eu sem tempor, varius quam at, luctus dui.
-                          Mauris magna metus, dapibus nec turpis vel, semper
-                          malesuada ante.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Anikesh} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr.Anikesh</b>
+                {testimonialsData.map((data, index) => {
+                  return (
+                    <div
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    >
+                      <div className="row">
+                        {data.map((innerData, innerIndex) => {
+                          return (
+                            <div className="col-sm-6">
+                              <div className="testimonial">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit. Nam eu sem tempor, varius
+                                  quam at, luctus dui. Mauris magna metus,
+                                  dapibus nec turpis vel, semper malesuada ante.
+                                </p>
+                              </div>
+                              <div className="media">
+                                <img src={innerData.src} className="mr-3" alt />
+                                <div className="media-body">
+                                  <div className="overview">
+                                    <div className="name">
+                                      <b>{innerData.name}</b>
+                                    </div>
+                                    <div className="details">
+                                      {innerData.position}
+                                    </div>
+                                    <div className="star-rating">
+                                      <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star-o" />
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="details">Founder</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Vestibulum quis quam ut magna consequat faucibu. Eget
-                          mi suscipit tincidunt. Utmtc tempus dictum.
-                          Pellentesque virra. Quis quam ut magna consequat
-                          faucibus quam.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Aman} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr. Aman</b>
-                            </div>
-                            <div className="details">Partner of Owner</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                          );
+                        })}
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam eu sem tempor, varius quam at, luctus dui.
-                          Mauris magna metus, dapibus nec turpis vel, semper
-                          malesuada ante.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Arpit} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr. Arpit</b>
-                            </div>
-                            <div className="details">Kichen seff</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Vestibulum quis quam ut magna consequat faucibu. Eget
-                          mi suscipit tincidunt. Utmtc tempus dictum.
-                          Pellentesque virra. Quis quam ut magna consequat
-                          faucibus quam.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Tarun} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b> Mr. Tarun</b>
-                            </div>
-                            <div className="details">Kichen seff</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Carousel controls */}
-                <Link
-                  className="carousel-control-prev"
-                  href="#myCarousel"
-                  data-slide="prev"
-                >
-                  <i className="fa fa-chevron-left" />
-                </Link>
-                <Link
-                  className="carousel-control-next"
-                  href="#myCarousel"
-                  data-slide="next"
-                >
-                  <i className="fa fa-chevron-right" />
-                </Link>
-                5
+                  );
+                })}
               </div>
             </div>
           </div>
