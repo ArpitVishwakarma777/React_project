@@ -17,36 +17,68 @@ import Tarun from "../../assets/image/carousel3.png";
 import Helper_Template from "../../assets/image/Helper_Template.jpg";
 
 import "bootstrap/dist/js/bootstrap.bundle";
-
+const carddata = [
+  {
+    src: Dalbati,
+    title: "Dal-Bati",
+    textClass: "card_text1",
+    text: " A plate with 5 ghee-soaked Batis, served with a bowl of hot Dal and fresh salad.",
+  },
+  {
+    src: Paratha,
+    title: "Dahi-Paratha",
+    textClass: "card_text2",
+    text: "(Panjabi Tad)A serving of 5 soft parathas with fresh yogurt and flavorful spices.",
+  },
+  {
+    src: Sev,
+    title: "sev-veg & more",
+    textClass: "card_text3",
+    text: "A plate with 4-5 soft rotis, extra crispy gram flour noodles curry,and salad.",
+  },
+  {
+    src: Poori,
+    title: "Poori special",
+    textClass: "card_text4",
+    text: " Enjoy 5 fluffy puris paired with a flavorful potato curry and a side of fresh salad.",
+  },
+  {
+    src: FullThal,
+    title: "Full-thali",
+    textClass: "card_text5",
+    text: " India flavors in one plate Roti, Sabji, Dahi, Salad, and more complete thali.",
+  },
+  {
+    src: MakkaChapati,
+    title: "Chapati special",
+    textClass: "card_text3",
+    text: "Taste tradition with 4 Makki di Roti and full plat Sarson da Saag- test of panjabi",
+  },
+];
+const testimonialsData = [
+  [
+    { src: Anikesh, name: "Anikesh", position: "Owner" },
+    {
+      src: Aman,
+      name: "Aman",
+      position: "Owner",
+    },
+  ],
+  [
+    { src: Arpit, name: "Arpit", position: "Owner" },
+    {
+      src: Tarun,
+      name: "Tarun",
+      position: "Owner",
+    },
+  ],
+];
 export default function Home() {
   return (
     <div>
-      {/* <div className="mainBox">
-        <div className="blurBox bg-secondary text-white container-fluid d-flex justify-content-center align-items-center position-absolute">
-          <div className="textBox" />
-        </div>
-        <div
-          className="position-relative d-flex justify-content-center align-items-center "
-          style={{ height: "50vh" }}
-        >
-          <div className="mx-5">
-            <h1 className="text mb-4">
-              "Bringing the taste of home, one tiffin at a time."
-            </h1>
-            <div className="d-flex justify-content-xs-center">
-              <button
-                type="button"
-                className="btn rounded btn-danger order_now   my-4 mx-5 w-sm-25 rounded "
-              >
-                Order Now!
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      */}
       {/* For Carousels */}
-      <div id="carouselExampleCaptions" className="carousel slide">
+      <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel"
+      data-bs-inteval="1000">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -82,7 +114,7 @@ export default function Home() {
             </div>
           </div>
           <div className=" carousel-item2 carousel-item">
-            <img src={Carousel2} className="d-block w-100" alt="..." />
+            <img src={Carousel2} className="d-block  h-50 w-100" alt="..." />
             <div className="caption2 d-none d-md-block">
               <p>"Bringing the taste of home </p>
               <p> one tiffin at a time."</p>
@@ -92,7 +124,7 @@ export default function Home() {
             </div>
           </div>
           <div className="carousel-item carousel-item3 ">
-            <img src={Carousel3} className="d-block w-100" alt="..." />
+            <img src={Carousel3} className="d-block  h-50 w-100" alt="..." />
             <div className="caption3 d-none d-md-block">
               <p>"Bringing the taste of home </p>
               <p> one tiffin at a time."</p>
@@ -124,104 +156,26 @@ export default function Home() {
       <div className="d-flex justify-content-center my-sm-4">
         <h1 className="One-day-special">One day special</h1>
       </div>
+
       {/* For Cards */}
       <div className="container">
         <div className="row">
-          <div className="col1 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Dalbati} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Dal-Bati</h5>
-                <p className="card-text1">
-                  A plate with 5 ghee-soaked Batis, served with a bowl of hot
-                  Dal and fresh salad.
-                </p>
-                <Link href="#" className="btn  btn-primary">
-                  Add Card
-                </Link>
+          {carddata.map((card) => {
+            return (
+              <div className="col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
+                <div className="card box-shadow">
+                  <img src={card.src} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{card.title}</h5>
+                    <p className={card.textClass}>{card.text}</p>
+                    <Link href="#" className="btn  btn-primary">
+                      Add Card
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          {/* For second card */}
-          <div className="col2 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Paratha} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Dahi-Paratha</h5>
-                <p className="card-text2">
-                  (Panjabi Tad)A serving of 5 soft parathas with fresh yogurt
-                  and flavorful spices.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For third card */}
-          <div className="col3 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={Sev} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text3">
-                  {/* A plate with 4-5 soft rotis, extra crispy gram flour noodles
-        curry,and  salad.*/}
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For fourth card */}
-          <div className="col4 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow  ">
-              <img src={Poori} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Poori special</h5>
-                <p className="card-text4">
-                  Enjoy 5 fluffy puris paired with a flavorful potato curry and
-                  a side of fresh salad.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For Five,th card */}
-          <div className="col5 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={FullThal} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text5">
-                  India flavors in one plate Roti, Sabji, Dahi, Salad, and more
-                  complete thali.
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
-          {/* For Sixth card */}
-          <div className="col6 col-sm-4 col-lg-3 col-xs-6 pb-sm-3 py-3 py-sm-0">
-            <div className="card box-shadow">
-              <img src={MakkaChapati} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Sev-veg &amp; more</h5>
-                <p className="card-text6">
-                  Taste tradition with 4 Makki di Roti and full plat Sarson da
-                  Saag- test of panjabi
-                </p>
-                <Link href="#" className="btn btn-primary">
-                  Add Card
-                </Link>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
       <div className="container mt-lg-2">
@@ -237,6 +191,8 @@ export default function Home() {
               id="myCarousel"
               className="carousel slide"
               data-ride="carousel"
+              data-interval="5000"
+
             >
               <h2>
                 Collbrate<b></b> with Owner
@@ -252,197 +208,68 @@ export default function Home() {
               </ol>
               {/* Wrapper for carousel items */}
               <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam eu sem tempor, varius quam at, luctus dui.
-                          Mauris magna metus, dapibus nec turpis vel, semper
-                          malesuada ante.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Anikesh} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr.Anikesh</b>
+                {testimonialsData.map((data, index) => {
+                  return (
+                    <div
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    >
+                      <div className="row">
+                        {data.map((innerData, innerIndex) => {
+                          return (
+                            <div className="col-sm-6">
+                              <div className="testimonial">
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit. Nam eu sem tempor, varius
+                                  quam at, luctus dui. Mauris magna metus,
+                                  dapibus nec turpis vel, semper malesuada ante.
+                                </p>
+                              </div>
+                              <div className="media">
+                                <img src={innerData.src} className="mr-3" alt />
+                                <div className="media-body">
+                                  <div className="overview">
+                                    <div className="name">
+                                      <b>{innerData.name}</b>
+                                    </div>
+                                    <div className="details">
+                                      {innerData.position}
+                                    </div>
+                                    <div className="star-rating">
+                                      <ul className="list-inline">
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star" />
+                                        </li>
+                                        <li className="list-inline-item">
+                                          <i className="fa fa-star-o" />
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="details">Founder</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Vestibulum quis quam ut magna consequat faucibu. Eget
-                          mi suscipit tincidunt. Utmtc tempus dictum.
-                          Pellentesque virra. Quis quam ut magna consequat
-                          faucibus quam.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Aman} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr. Aman</b>
-                            </div>
-                            <div className="details">Partner of Owner</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                          );
+                        })}
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="carousel-item">
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam eu sem tempor, varius quam at, luctus dui.
-                          Mauris magna metus, dapibus nec turpis vel, semper
-                          malesuada ante.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Arpit} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b>Mr. Arpit</b>
-                            </div>
-                            <div className="details">Kichen seff</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="testimonial">
-                        <p>
-                          Vestibulum quis quam ut magna consequat faucibu. Eget
-                          mi suscipit tincidunt. Utmtc tempus dictum.
-                          Pellentesque virra. Quis quam ut magna consequat
-                          faucibus quam.
-                        </p>
-                      </div>
-                      <div className="media">
-                        <img src={Tarun} className="mr-3" alt />
-                        <div className="media-body">
-                          <div className="overview">
-                            <div className="name">
-                              <b> Mr. Tarun</b>
-                            </div>
-                            <div className="details">Kichen seff</div>
-                            <div className="star-rating">
-                              <ul className="list-inline">
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star" />
-                                </li>
-                                <li className="list-inline-item">
-                                  <i className="fa fa-star-o" />
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Carousel controls */}
-                <Link
-                  className="carousel-control-prev"
-                  href="#myCarousel"
-                  data-slide="prev"
-                >
-                  <i className="fa fa-chevron-left" />
-                </Link>
-                <Link
-                  className="carousel-control-next"
-                  href="#myCarousel"
-                  data-slide="next"
-                >
-                  <i className="fa fa-chevron-right" />
-                </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
         </div>
       </div>
       <br />
-
     </div>
-
   );
 }
